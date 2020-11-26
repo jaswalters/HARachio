@@ -1,0 +1,17 @@
+  sprinkler_submit_zone1:
+    name: Run Zone 1
+    
+  sprinkler_submit_zone2:
+    name: Run Zone 2
+
+  sprinkler_submit_zone3:
+    name: Run Zone 3
+
+  sprinkler_submit_zone4:
+    name: Run Zone 4
+
+  sprinkler_submit_zone5:
+    name: Run Zone 5
+
+  sprinkler_submitlockbtn:
+    name: Lock Submit Button

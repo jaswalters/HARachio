@@ -1,0 +1,23 @@
+  sprinkler_qr_timer_zone1:
+    name: Sprinkler QR Timer Zone 1
+    initial: idle
+
+  sprinkler_qr_timer_zone2:
+    name: Sprinkler QR Timer Zone 2
+    initial: idle
+
+  sprinkler_qr_timer_zone3:
+    name: Sprinkler QR Timer Zone 3
+    initial: idle
+
+  sprinkler_qr_timer_zone4:
+    name: Sprinkler QR Timer Zone 4
+    initial: idle
+
+  sprinkler_qr_timer_zone5:
+    name: Sprinkler QR Timer Zone 5
+    initial: idle
+
+  sprinkler_qr_order66:
+    name: Sprinkler QR Order 66
+    initial: Execute

@@ -1,0 +1,17 @@
+  sprinkler_all_zones:
+    name: All sprinklers
+    entities:
+      - switch.sprinkler_zone1
+      - switch.sprinkler_zone2
+      - switch.sprinkler_zone3
+      - switch.sprinkler_zone4
+      - switch.sprinkler_zone5
+      
+  sprinkler_all_qr_timers:
+    name: sprinkler_all_qr_timers
+    entities:
+      - timer.sprinkler_qr_zone1
+      - timer.sprinkler_qr_zone2
+      - timer.sprinkler_qr_zone3
+      - timer.sprinkler_qr_zone4
+      - timer.sprinkler_qr_zone5

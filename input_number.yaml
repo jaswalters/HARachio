@@ -1,0 +1,39 @@
+  sprinkler_qrruntime_zone1:
+    name: Sprinkler Zone 1 Quick Run Minutes
+    initial: 5
+    min: 1
+    max: 30
+    step: 1
+    mode: box
+    
+  sprinkler_qrruntime_zone2:
+    name: Sprinkler Zone 2 Quick Run Minutes
+    initial: 5
+    min: 1
+    max: 30
+    step: 1
+    mode: box
+
+  sprinkler_qrruntime_zone3:
+    name: Sprinkler Zone 3 Quick Run Minutes
+    initial: 5
+    min: 1
+    max: 30
+    step: 1
+    mode: box
+
+  sprinkler_qrruntime_zone4:
+    name: Sprinkler Zone 4 Quick Run Minutes
+    initial: 5
+    min: 1
+    max: 30
+    step: 1
+    mode: box
+
+  sprinkler_qrruntime_zone5:
+    name: Sprinkler Zone 5 Quick Run Minutes
+    initial: 5
+    min: 1
+    max: 30
+    step: 1
+    mode: box

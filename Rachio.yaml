@@ -1,0 +1,259 @@
+- type: entities
+      title: Irrigation
+      icon: mdi:sprinkler-variant
+      entities:
+        - type: conditional
+          conditions:
+            - entity: group.sprinkler_all_zones
+              state: "on"
+          row:
+            type: custom:hui-element
+            card_type: markdown
+            content: |
+              {% for entity_id in states.group.sprinkler_all_zones.attributes.entity_id -%}
+              {% set domain, device = entity_id.split('.') -%}
+              {% set entity = states[domain][device] %}
+              {% if entity.state == "on" %}
+              {% set entity = entity.entity_id %}
+              Currently Running Zone: {{ entity[21:] }}
+              {% endif %}
+              {% endfor %}
+        - type: conditional
+          conditions:
+            - entity: group.sprinkler_all_zones
+              state: "off"
+          row:
+            type: custom:hui-element
+            card_type: markdown
+            content: |
+              Currently Running Zone: idle
+        - type: custom:fold-entity-row
+          head:
+            type: section
+            label: "Zone 1"
+          entities:
+            - type: custom:state-switch
+              entity: input_boolean.sprinkler_submitlockbtn
+              default: default
+              states:
+                default:
+                    type: custom:button-card
+                    name: "Zone 1"
+                    entity: input_boolean.sprinkler_submit_zone1
+                    color_type: card
+                    layout: icon_name_state
+                    aspect_ratio: 6/1
+                    show_state: true
+                    icon: >
+                      [[[
+                        if (entity.state == 'on') return 'mdi:water';
+                        else return 'mdi:water-off-outline';
+                      ]]]
+                    state:
+                      - value: "on"
+                        color: var(--primary-color)
+                      - value: "off"
+                        color: var(--disabled-color)
+                "on":
+                    type: custom:button-card
+                    name: "Button Disabled"
+                    color: var(--halt-button-color)
+                    color_type: label-card
+                    layout: icon_name
+                    aspect_ratio: 6/1
+                    show_state: false
+                    icon: >
+                      [[[
+                        if (states['input_boolean.sprinkler_submit_zone1'].state == 'on') return 'mdi:water';
+                        else return 'mdi:water-off-outline';
+                      ]]]
+            - entity: input_text.sprinkler_qr_timer_zone1
+              name: "Runtime Remaining"
+              icon: mdi:timer-sand
+            - entity: input_number.sprinkler_qrruntime_zone1
+              name: "Runtime"
+              icon: mdi:timelapse
+        - type: custom:fold-entity-row
+          head:
+            type: section
+            label: "Zone 2"
+          entities:
+            - type: custom:state-switch
+              entity: input_boolean.sprinkler_submitlockbtn
+              default: default
+              states:
+                default:
+                    type: custom:button-card
+                    name: "Zone 2"
+                    entity: input_boolean.sprinkler_submit_zone2
+                    color_type: card
+                    layout: icon_name_state
+                    aspect_ratio: 6/1
+                    show_state: true
+                    icon: >
+                      [[[
+                        if (entity.state == 'on') return 'mdi:water';
+                        else return 'mdi:water-off-outline';
+                      ]]]
+                    state:
+                      - value: "on"
+                        color: var(--primary-color)
+                      - value: "off"
+                        color: var(--disabled-color)
+                "on":
+                    type: custom:button-card
+                    name: "Button Disabled"
+                    color: var(--halt-button-color)
+                    color_type: label-card
+                    layout: icon_name
+                    aspect_ratio: 6/1
+                    show_state: false
+                    icon: >
+                      [[[
+                        if (states['input_boolean.sprinkler_submit_zone2'].state == 'on') return 'mdi:water';
+                        else return 'mdi:water-off-outline';
+                      ]]]
+            - entity: input_text.sprinkler_qr_timer_zone2
+              name: "Runtime Remaining"
+              icon: mdi:timer-sand
+            - entity: input_number.sprinkler_qrruntime_zone2
+              name: "Runtime"
+              icon: mdi:timelapse
+        - type: custom:fold-entity-row
+          head:
+            type: section
+            label: "Zone 3"
+          entities:
+            - type: custom:state-switch
+              entity: input_boolean.sprinkler_submitlockbtn
+              default: default
+              states:
+                default:
+                    type: custom:button-card
+                    name: "Zone 3"
+                    entity: input_boolean.sprinkler_submit_zone3
+                    color_type: card
+                    layout: icon_name_state
+                    aspect_ratio: 6/1
+                    show_state: true
+                    icon: >
+                      [[[
+                        if (entity.state == 'on') return 'mdi:water';
+                        else return 'mdi:water-off-outline';
+                      ]]]
+                    state:
+                      - value: "on"
+                        color: var(--primary-color)
+                      - value: "off"
+                        color: var(--disabled-color)
+                "on":
+                    type: custom:button-card
+                    name: "Button Disabled"
+                    color_type: label-card
+                    color: var(--halt-button-color)
+                    layout: icon_name
+                    aspect_ratio: 6/1
+                    show_state: false
+                    icon: >
+                      [[[
+                        if (states['input_boolean.sprinkler_submit_zone3'].state == 'on') return 'mdi:water';
+                        else return 'mdi:water-off-outline';
+                      ]]]
+            - entity: input_text.sprinkler_qr_timer_zone3
+              name: "Runtime Remaining"
+              icon: mdi:timer-sand
+            - entity: input_number.sprinkler_qrruntime_zone3
+              name: "Runtime"
+              icon: mdi:timelapse
+        - type: custom:fold-entity-row
+          head:
+            type: section
+            label: "Zone 4"
+          entities:
+            - type: custom:state-switch
+              entity: input_boolean.sprinkler_submitlockbtn
+              default: default
+              states:
+                default:
+                    type: custom:button-card
+                    name: "Zone 4"
+                    entity: input_boolean.sprinkler_submit_zone4
+                    color_type: card
+                    layout: icon_name_state
+                    aspect_ratio: 6/1
+                    show_state: true
+                    icon: >
+                      [[[
+                        if (entity.state == 'on') return 'mdi:water';
+                        else return 'mdi:water-off-outline';
+                      ]]]
+                    state:
+                      - value: "on"
+                        color: var(--primary-color)
+                      - value: "off"
+                        color: var(--disabled-color)
+                "on":
+                    type: custom:button-card
+                    name: "Button Disabled"
+                    color: var(--halt-button-color)
+                    color_type: label-card
+                    layout: icon_name
+                    aspect_ratio: 6/1
+                    show_state: false
+                    icon: >
+                      [[[
+                        if (states['input_boolean.sprinkler_submit_zone4'].state == 'on') return 'mdi:water';
+                        else return 'mdi:water-off-outline';
+                      ]]]
+            - entity: input_text.sprinkler_qr_timer_zone4
+              name: "Runtime Remaining"
+              icon: mdi:timer-sand
+            - entity: input_number.sprinkler_qrruntime_zone4
+              name: "Runtime"
+              icon: mdi:timelapse
+        - type: custom:fold-entity-row
+          head:
+            type: section
+            label: "Zone 5"
+          entities:
+            - type: custom:state-switch
+              entity: input_boolean.sprinkler_submitlockbtn
+              default: default
+              states:
+                default:
+                    type: custom:button-card
+                    name: "Zone 5"
+                    entity: input_boolean.sprinkler_submit_zone5
+                    color_type: card
+                    layout: icon_name_state
+                    aspect_ratio: 6/1
+                    show_state: true
+                    icon: >
+                      [[[
+                        if (entity.state == 'on') return 'mdi:water';
+                        else return 'mdi:water-off-outline';
+                      ]]]
+                    state:
+                      - value: "on"
+                        color: var(--primary-color)
+                      - value: "off"
+                        color: var(--disabled-color)
+                "on":
+                    type: custom:button-card
+                    name: "Button Disabled"
+                    color: var(--halt-button-color)
+                    color_type: label-card
+                    layout: icon_name
+                    aspect_ratio: 6/1
+                    show_state: false
+                    icon: >
+                      [[[
+                        if (states['input_boolean.sprinkler_submit_zone5'].state == 'on') return 'mdi:water';
+                        else return 'mdi:water-off-outline';
+                      ]]]
+            - entity: input_text.sprinkler_qr_timer_zone5
+              name: "Runtime Remaining"
+              icon: mdi:timer-sand
+            - entity: input_number.sprinkler_qrruntime_zone5
+              name: "Runtime"
+              icon: mdi:timelapse
